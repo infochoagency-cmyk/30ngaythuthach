@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành Trình 30 Ngày Thực Tập Trading - Markets4you</title>
+    <meta name="description" content="Đăng ký tham gia tuyển chọn 30 nhà đầu tư xuất sắc. Nhận cấp vốn giao dịch và cố vấn 1:1 từ chuyên gia 20 năm kinh nghiệm.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts Tối Ưu Cho Tiếng Việt (Be Vietnam Pro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',    // Nền tối sang trọng
+                            primary: '#1e3a8a', // Xanh dương Markets4you
+                            accent: '#f59e0b',  // Vàng cam nổi bật
+                            success: '#10b981'  // Xanh lá (Lợi nhuận/Cấp vốn)
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="block py-2">
+                        <!-- Chuyển Logo thành Text thuần túy -->
+                        <span class="text-2xl font-extrabold text-white tracking-tight">Markets<span class="text-brand-success">4you</span></span>
+                    </a>
+                </div>
+                <div>
+                    <a href="#register" class="bg-brand-accent hover:bg-yellow-500 text-brand-dark font-bold py-2 px-6 rounded-full transition duration-300 text-sm sm:text-base">
+                        Giữ Chỗ Ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center lg:text-left">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 text-blue-300 font-semibold text-sm mb-4 border border-blue-700">
+                        📍 Sự kiện Offline Đặc Quyền Tại TP.HCM
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        30 TÀI NĂNG GIAO DỊCH <br>
+                        <span class="gradient-text">ĐƯỢC CẤP VỐN THỰC CHIẾN</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Đào tạo bài bản, cố vấn 1:1 bởi Master 20 năm kinh nghiệm & nhận vốn cấp trực tiếp từ Markets4you.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#register" class="bg-brand-accent hover:bg-yellow-500 text-brand-dark font-bold text-lg py-4 px-8 rounded-lg text-center shadow-lg shadow-yellow-500/30 transition duration-300 transform hover:-translate-y-1">
+                            Đăng Ký Tuyển Chọn
+                        </a>
+                        <a href="#roadmap" class="bg-transparent border-2 border-gray-500 text-white hover:border-white font-semibold text-lg py-4 px-8 rounded-lg text-center transition duration-300">
+                            Xem Lộ Trình
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-400">
+                        <div class="flex items-center"><i class="fas fa-users text-brand-accent mr-2"></i> Chỉ 30 Slot</div>
+                        <div class="flex items-center"><i class="fas fa-gift text-brand-accent mr-2"></i> Tài trợ 100%</div>
+                    </div>
+                </div>
+                
+                <!-- Form Teaser Card -->
+                <div class="hidden lg:block bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-2xl shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-2">Sẵn sàng nâng tầm sự nghiệp?</h3>
+                    <p class="text-gray-300 mb-6">Điền form bên dưới để bộ phận xét duyệt liên hệ mời bạn dự Offline tại HCM.</p>
+                    <ul class="space-y-4 text-gray-200 mb-8">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-brand-success mt-1 mr-3"></i> <span>Giao dịch bằng vốn của quỹ, không rủi ro tiền túi.</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-brand-success mt-1 mr-3"></i> <span>Hệ thống phương pháp độc quyền (Price Action, SMC, EA).</span></li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-brand-success mt-1 mr-3"></i> <span>Mentor 1:1 đồng hành sửa lỗi tâm lý mỗi ngày.</span></li>
+                    </ul>
+                    <a href="#register" class="block w-full bg-brand-primary hover:bg-blue-800 text-white font-bold text-center py-3 rounded-lg transition duration-300">
+                        Điền Form Ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lộ trình 30 Ngày (Roadmap) -->
+    <section id="roadmap" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-4">Lộ Trình 30 Ngày Khắc Nghiệt & Xứng Đáng</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Từ một nhà đầu tư tự do trở thành Trader có kỷ luật, được định hướng bởi Master và quản lý dòng vốn thật.</p>
+            </div>
+
+            <div class="relative">
+                <!-- Line -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200"></div>
+                
+                <!-- Tuần 1-2 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-12">
+                    <div class="md:w-5/12 text-right md:pr-8 mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold text-brand-primary">Tuần 1 & 2: Vững Nền Tảng</h3>
+                        <p class="text-gray-600 mt-2">Hệ thống hóa lại toàn bộ kiến thức. Hiểu sâu về cấu trúc thị trường, quản trị rủi ro chuyên nghiệp và thiết lập kỷ luật thép.</p>
+                    </div>
+                    <div class="w-12 h-12 bg-brand-accent rounded-full border-4 border-white shadow flex items-center justify-center text-white font-bold z-10 mb-6 md:mb-0">1</div>
+                    <div class="md:w-5/12 md:pl-8"></div>
+                </div>
+
+                <!-- Tuần 3 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between mb-12">
+                    <div class="md:w-5/12 hidden md:block"></div>
+                    <div class="w-12 h-12 bg-brand-primary rounded-full border-4 border-white shadow flex items-center justify-center text-white font-bold z-10 mb-6 md:mb-0">2</div>
+                    <div class="md:w-5/12 md:pl-8 text-left text-center md:text-left mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold text-brand-primary">Tuần 3: Khám Phá & Tối Ưu Phương Pháp</h3>
+                        <p class="text-gray-600 mt-2">Truy cập thư viện tài nguyên độc quyền. Lựa chọn "Vũ khí" phù hợp để rèn luyện chuyên sâu:</p>
+                        <ul class="mt-3 space-y-2 text-sm text-gray-700 text-left list-disc list-inside">
+                            <li><strong>Price Action:</strong> Đọc hiểu hành vi giá thuần túy.</li>
+                            <li><strong>SMC (Smart Money Concept):</strong> Theo dấu dòng tiền thông minh của các tổ chức.</li>
+                            <li><strong>BobVolume:</strong> Phương pháp phân tích khối lượng giao dịch đột phá.</li>
+                            <li><strong>Algo/EA:</strong> Cài đặt và vận hành hệ thống giao dịch tự động.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tuần 4 -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between">
+                    <div class="md:w-5/12 text-right md:pr-8 mb-6 md:mb-0 text-center md:text-right">
+                        <h3 class="text-2xl font-bold text-brand-success">Tuần 4: Thực Chiến & Cấp Vốn</h3>
+                        <p class="text-gray-600 mt-2">Giao dịch dưới áp lực thực tế cùng sự giám sát của Master. Vượt qua bài test quản lý rủi ro để chính thức nhận tài khoản Cấp Vốn Live từ Markets4you.</p>
+                    </div>
+                    <div class="w-12 h-12 bg-brand-success rounded-full border-4 border-white shadow flex items-center justify-center text-white font-bold z-10 mb-6 md:mb-0">3</div>
+                    <div class="md:w-5/12 hidden md:block"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentors Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-4">Đội Ngũ Cố Vấn (The Masters)</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-16">Bạn không đơn độc. Đồng hành cùng bạn là những "Lão tướng" trên thị trường tài chính, những người đã trải qua mọi thăng trầm.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Mentor 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300">
+                    <div class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Mentor Tiêu Chuẩn</h3>
+                    <p class="text-brand-accent font-semibold mb-4">> 10 Năm Kinh Nghiệm Thực Chiến</p>
+                    <p class="text-gray-600">Trực tiếp đồng hành hàng ngày. Giúp bạn xử lý các điểm mù về phân tích kỹ thuật, chấn chỉnh tâm lý FOMO và duy trì kỷ luật vào lệnh.</p>
+                </div>
+                <!-- Mentor 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 ring-2 ring-brand-accent">
+                    <div class="absolute top-0 right-0 bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">VIP Cố Vấn</div>
+                    <div class="w-24 h-24 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Master VIP</h3>
+                    <p class="text-brand-accent font-semibold mb-4">> 20 Năm Kinh Nghiệm Qũy/Algo</p>
+                    <p class="text-gray-600">Chuyên gia quản lý quỹ & hệ thống kinh doanh đa tầng. Cố vấn chiến lược phân bổ vốn lớn, xây dựng doanh nghiệp tài chính bền vững cho những cá nhân xuất sắc nhất.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section (Mô phỏng Google Form) -->
+    <section id="register" class="py-20 bg-brand-dark relative overflow-hidden">
+        <!-- Background elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-primary blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-brand-accent blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Ghi Danh Tuyển Chọn</h2>
+                <p class="text-gray-300">Hoàn thành biểu mẫu dưới đây. Đội ngũ Markets4you sẽ liên hệ để xác nhận vé mời tham dự Offline tại HCM.</p>
+            </div>
+
+            <!-- Khung Form -->
+            <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-10">
+                <!-- Thông báo thành công (Ẩn mặc định) -->
+                <div id="success-message" class="hidden text-center py-10">
+                    <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Đăng Ký Thành Công!</h3>
+                    <p class="text-gray-600 mb-6">
+                        Cảm ơn bạn đã đăng ký tham gia tuyển chọn "Hành trình 30 Ngày Thực tập Trading" của Markets4you.<br><br>
+                        Ban tổ chức đã ghi nhận thông tin. Đội ngũ hỗ trợ sẽ liên hệ trực tiếp qua Zalo/SĐT trong vòng 24h tới để xác nhận lịch hẹn Offline tại văn phòng TP.HCM. Chúc bạn một ngày giao dịch hiệu quả!
+                    </p>
+                    <button onclick="window.location.reload()" class="text-brand-primary font-semibold hover:underline">Về trang chủ</button>
+                </div>
+
+                <!-- Biểu mẫu Form -->
+                <form id="registration-form" class="space-y-6">
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                        <!-- Họ Tên -->
+                        <div>
+                            <label for="fullname" class="block text-sm font-medium text-gray-700 mb-1">Họ và Tên (Bắt buộc)</label>
+                            <input type="text" id="fullname" name="fullname" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition" placeholder="VD: Nguyễn Văn A">
+                        </div>
+                        <!-- SĐT -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Số điện thoại / Zalo (Bắt buộc)</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition" placeholder="VD: 0901234567">
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email (Bắt buộc)</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition" placeholder="VD: email@example.com">
+                    </div>
+
+                    <!-- Kinh nghiệm -->
+                    <div>
+                        <label for="experience" class="block text-sm font-medium text-gray-700 mb-1">Kinh nghiệm giao dịch của bạn?</label>
+                        <select id="experience" name="experience" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition bg-white">
+                            <option value="" disabled selected>-- Vui lòng chọn --</option>
+                            <option value="none">Người mới hoàn toàn (Chưa có kinh nghiệm)</option>
+                            <option value="under_1">Dưới 1 năm (Đã giao dịch nhưng chưa ổn định)</option>
+                            <option value="1_to_3">Từ 1 - 3 năm (Đã có phương pháp riêng)</option>
+                            <option value="over_3">Trên 3 năm (Trader chuyên nghiệp/Algo Trader)</option>
+                        </select>
+                    </div>
+
+                    <!-- Mục tiêu (Checkboxes) -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Mục tiêu lớn nhất của bạn khi tham gia là gì? (Có thể chọn nhiều)</label>
+                        <div class="space-y-3">
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" name="goals" value="method" class="mt-1 w-4 h-4 text-brand-primary rounded border-gray-300 focus:ring-brand-primary">
+                                <span class="ml-3 text-gray-600">Tìm kiếm phương pháp giao dịch chuẩn xác</span>
+                            </label>
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" name="goals" value="funding" class="mt-1 w-4 h-4 text-brand-primary rounded border-gray-300 focus:ring-brand-primary">
+                                <span class="ml-3 text-gray-600">Nhận cấp vốn giao dịch từ quỹ/sàn</span>
+                            </label>
+                            <label class="flex items-start cursor-pointer">
+                                <input type="checkbox" name="goals" value="mentor" class="mt-1 w-4 h-4 text-brand-primary rounded border-gray-300 focus:ring-brand-primary">
+                                <span class="ml-3 text-gray-600">Được định hướng bởi các Cố vấn (Master)</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer mt-2">
+                                <input type="checkbox" id="other-goal-checkbox" class="w-4 h-4 text-brand-primary rounded border-gray-300 focus:ring-brand-primary">
+                                <span class="ml-3 text-gray-600 whitespace-nowrap">Khác:</span>
+                                <input type="text" id="other-goal-input" class="ml-2 w-full border-b border-gray-300 focus:border-brand-primary outline-none px-2 py-1 text-sm" placeholder="Điền mục tiêu của bạn...">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Cam kết -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Bạn có cam kết tham gia đầy đủ buổi Offline tại TP.HCM và hành trình 30 ngày tiếp theo không?</label>
+                        <div class="space-y-3">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="commitment" value="yes" required class="w-4 h-4 text-brand-primary border-gray-300 focus:ring-brand-primary">
+                                <span class="ml-3 text-gray-600 text-base font-semibold text-brand-success">Chắc chắn cam kết</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="commitment" value="need_consult" class="w-4 h-4 text-brand-primary border-gray-300 focus:ring-brand-primary">
+                                <span class="ml-3 text-gray-600">Tôi cần tư vấn thêm lịch trình</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" id="submit-btn" class="w-full flex justify-center items-center bg-brand-accent hover:bg-yellow-500 text-brand-dark font-bold text-lg py-4 rounded-lg shadow-lg transition duration-300">
+                            <span>Gửi Đăng Ký Ngay</span>
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                        <p class="text-xs text-center text-gray-500 mt-4">Thông tin của bạn được bảo mật tuyệt đối và chỉ dùng cho mục đích liên hệ sự kiện.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Risk Warning -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="block">
+                        <!-- Chuyển Logo Footer thành Text thuần túy -->
+                        <span class="text-3xl font-extrabold text-white tracking-tight opacity-90 hover:opacity-100 transition-opacity">Markets<span class="text-brand-success">4you</span></span>
+                    </a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-telegram text-xl"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quan trọng: Cảnh báo rủi ro bắt buộc đối với ngành tài chính -->
+            <div class="bg-gray-800 p-6 rounded-lg text-xs leading-relaxed mb-6">
+                <strong class="text-gray-300 block mb-2">Cảnh báo rủi ro (Risk Warning):</strong>
+                Giao dịch ngoại hối (Forex) và Hợp đồng chênh lệch (CFDs) sử dụng đòn bẩy chứa đựng mức độ rủi ro cao đối với vốn của bạn. Việc đầu tư có thể không phù hợp với tất cả mọi người. Vui lòng đảm bảo rằng bạn hiểu đầy đủ các rủi ro liên quan và quản lý rủi ro của bạn một cách cẩn thận. Chương trình "Hành trình 30 Ngày Thực tập Trading" là một sự kiện giáo dục và tuyển chọn đối tác, không phải là lời khuyên đầu tư tài chính.
+            </div>
+            
+            <div class="text-center text-sm border-t border-gray-800 pt-6">
+                &copy; 2026 Markets4you. Tất cả các quyền được bảo lưu. Chương trình áp dụng cho khu vực Miền Nam Việt Nam.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic xử lý Form -->
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Ngăn chặn form load lại trang
+            
+            const submitBtn = document.getElementById('submit-btn');
+            
+            // Hiệu ứng đang tải (Loading state)
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Đang xử lý...';
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            // Mô phỏng thời gian gửi data (Thực tế bạn sẽ dùng fetch/AJAX để gửi về CRM/Google Sheets)
+            setTimeout(() => {
+                // Ẩn form
+                document.getElementById('registration-form').classList.add('hidden');
+                
+                // Hiện thông báo thành công
+                const successMsg = document.getElementById('success-message');
+                successMsg.classList.remove('hidden');
+                
+                // Kéo màn hình lên khu vực thông báo
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1500);
+        });
+
+        // Xử lý ô Input Khác (Other) trong phần Mục tiêu
+        const otherCheckbox = document.getElementById('other-goal-checkbox');
+        const otherInput = document.getElementById('other-goal-input');
+
+        otherInput.addEventListener('input', function() {
+            if(this.value.trim() !== '') {
+                otherCheckbox.checked = true;
+                otherCheckbox.value = this.value;
+            } else {
+                otherCheckbox.checked = false;
+            }
+        });
+    </script>
+</body>
+</html>
